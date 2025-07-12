@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
  function Header() {
       return (
-        <header className="fixed top-0 left-0 w-full bg-cyan-200 border-b border-gray-200 py-4 px-6 flex items-center justify-start space-x-6 shadow-sm z-10">
+        <header className="fixed top-0 left-0 w-full bg-cyan-200 border-b border-gray-200 py-3 px-6 flex items-center justify-start space-x-6 shadow-sm z-10">
           <NavLink
             to="/"
             className={({ isActive }) =>
