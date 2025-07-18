@@ -7,9 +7,13 @@ import Header from "./Pages/Header";
 import Dashboard from "./Pages/Dashboard";
 import Profil from "./Pages/Profil";
 import Parametre from "./Pages/Parametre";
+import { UserProvider } from "./context/Context";
+import User from "./Pages/User";
+
 
 function App() {
       return (
+        <UserProvider>
         <BrowserRouter>
           <Header />
           <div className="pt-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,14 +22,16 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/products/:id" element={<Products />} />
               <Route path="/dashboard" element={<Dashboard />}>
-                <Route index element={<Navigate to="profil" replace />} />
+                <Route index element={<Navigate to="user" replace />} />
                 <Route path="profil" element={<Profil />} />
                 <Route path="parametres" element={<Parametre />} />
+                <Route path="user" element={<User />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </BrowserRouter>
+        </UserProvider>
       );
     }
 
